@@ -6,4 +6,4 @@ if [ ! -d /var/lib/tiddlywiki/${TW_WIKIPATH} ]; then
   tiddlywiki ${TW_WIKIPATH} --init server
 fi
 
-exec tiddlywiki ${TW_WIKIPATH} --server 8080 $:/core/save/all text/plain text/html "${TW_USERNAME}" "${TW_PASSWORD}" 0.0.0.0
+exec tiddlywiki ${TW_WIKIPATH} --server 8080 "${TW_ROOTTIDDLER}" text/plain text/html "${TW_USERNAME}" "${TW_PASSWORD}" 0.0.0.0
