@@ -1,0 +1,40 @@
+version: '2'
+networks:
+  bone:
+    driver: bridge
+volumes:
+  dataVol: { driver: local }
+services:
+  # nginx:
+  #   # nginx or openresty 二选一：镜像
+  #   image: hub.docker.kpcq.xyz:10002/kpcq/nginx:1.9
+  #   volumes: []
+  #   networks:
+  #     bone:
+  #   dns:
+  #     - 114.114.114.114
+  #     - 8.8.8.8
+  #   expose: []
+  #   ports: []
+  #   restart: always
+  #   environment: []
+  #   #command: /bin/bash -c 'envsubst '"'"'$${NGINX_SSL_CERTIFICATE},$${NGINX_SSL_CERTIFICATE_KEY}'"'"' < /etc/nginx/conf.d/nginx.conf.d.tpl > /etc/nginx/conf.d/default.conf && nginx -g "daemon off;"'
+  #   depends_on:
+  #     - exuser
+  #     - mongo
+  sandbox:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    #dns: ['114.114.114.114', '8.8.8.8']
+    ports: ['51080:8080']
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    working_dir: /var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=sandbox
+      - TW_USERNAME=sandbuxuser
+      - TW_PASSWORD=sandbuxpass
+
+

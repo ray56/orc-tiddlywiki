@@ -1,0 +1,5 @@
+docker run \
+  --name tw-data -h="tw-data" \
+  -v /var/lib/tiddlywiki \
+  kpbd/tiddlywiki \
+  echo tw-data
