@@ -27,8 +27,101 @@ services:
     working_dir: /var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=sandbox
-      - TW_USERNAME=sandbuxuser
-      - TW_PASSWORD=sandbuxpass
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  cui:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=cui
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  env:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=env
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  home:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=home
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  http:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=http
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  itt:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=itt
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  langs:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=langs
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
+  markup:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=markup
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
   sw:
     build: ./  # 以当前的Dockerfile构建
     restart: always

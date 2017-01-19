@@ -1,0 +1,33 @@
+version: '2'
+networks:
+  bone:
+    driver: bridge
+volumes:
+  dataVol: { driver: local }
+services:
+  nginx:
+    ## nginx or openresty 二选一：镜像
+    image: nginx:1.9
+    volumes:
+      - ./docker-compose.d/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      bone:
+    ports: ['8088:80']
+    restart: always
+    environment: []
+  sandbox:
+    build: ./  # 以当前的Dockerfile构建
+    restart: always
+    networks:
+      bone:
+    #dns: ['114.114.114.114', '8.8.8.8']
+    ports: ['51080:8080']
+    volumes:
+      - dataVol:/var/lib/tiddlywiki
+    working_dir: /var/lib/tiddlywiki
+    environment:
+      - TW_WIKIPATH=sandbox
+      - TW_USERNAME=sandboxuser
+      - TW_PASSWORD=sandboxpass
+
+
