@@ -1,6 +1,0 @@
-docker run -d \
-  --name tw2-datadict -h="tw2-datadict" \
-  -e TW_PASSWORD="" -e TW_USERNAME="" -e TW_WIKIPATH=datadict \
-  -p 8302:8080 \
-  --volumes-from tw-data \
-  kpbd/tiddlywiki

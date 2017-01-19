@@ -1,6 +1,0 @@
-docker run -d \
-  --name tw1-apidoc -h="tw1-apidoc" \
-  -e TW_PASSWORD="" -e TW_USERNAME="" -e TW_WIKIPATH=apidoc \
-  -p 8301:8080 \
-  --volumes-from tw-data \
-  kpbd/tiddlywiki
