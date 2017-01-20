@@ -44,7 +44,7 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
   env:
     build: ./  # 以当前的Dockerfile构建
@@ -58,7 +58,7 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
   itt:
     build: ./  # 以当前的Dockerfile构建
@@ -72,7 +72,7 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
   langs:
     build: ./  # 以当前的Dockerfile构建
@@ -86,7 +86,7 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
   sandbox:
     build: ./  # 以当前的Dockerfile构建
@@ -100,7 +100,7 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
   sw:
     build: ./  # 以当前的Dockerfile构建
@@ -114,5 +114,5 @@ services:
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 

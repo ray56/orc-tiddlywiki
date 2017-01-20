@@ -10,5 +10,5 @@
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
+      - TW_ROOTTIDDLER=$$:/core/save/all
 
