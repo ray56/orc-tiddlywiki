@@ -1,4 +1,4 @@
-  {{wiki}}:
+  cui:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
@@ -6,7 +6,7 @@
     volumes:
       - dataVol:/var/lib/tiddlywiki
     environment:
-      - TW_WIKIPATH={{wiki}}
+      - TW_WIKIPATH=cui
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
       ## double $ to escpae

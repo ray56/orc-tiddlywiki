@@ -10,25 +10,26 @@ services:
     image: nginx:1.9
     volumes:
       - ./docker-compose.d/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker-compose.d/nginx/nginx.conf:/etc/nginx/nginx.conf
     networks:
       bone:
     ports: ['8088:80']
     restart: always
     environment: []
-  sandbox:
-    build: ./  # 以当前的Dockerfile构建
-    restart: always
-    networks:
-      bone:
-    #dns: ['114.114.114.114', '8.8.8.8']
-    ports: ['51080:8080']
-    volumes:
-      - dataVol:/var/lib/tiddlywiki
-    working_dir: /var/lib/tiddlywiki
-    environment:
-      - TW_WIKIPATH=sandbox
-      - TW_USERNAME=sandboxuser
-      - TW_PASSWORD=sandboxpass
+#  sandbox:
+#    build: ./  # 以当前的Dockerfile构建
+#    restart: always
+#    networks:
+#      bone:
+#    #dns: ['114.114.114.114', '8.8.8.8']
+#    ports: ['51080:8080']
+#    volumes:
+#      - dataVol:/var/lib/tiddlywiki
+#    working_dir: /var/lib/tiddlywiki
+#    environment:
+#      - TW_WIKIPATH=sandbox
+#      - TW_USERNAME=sandboxuser
+#      - TW_PASSWORD=sandboxpass
 
 
   cui:
@@ -42,7 +43,8 @@ services:
       - TW_WIKIPATH=cui
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
-
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 
   env:
     build: ./  # 以当前的Dockerfile构建
@@ -55,33 +57,8 @@ services:
       - TW_WIKIPATH=env
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
-
-
-  home:
-    build: ./  # 以当前的Dockerfile构建
-    restart: always
-    networks:
-      bone:
-    volumes:
-      - dataVol:/var/lib/tiddlywiki
-    environment:
-      - TW_WIKIPATH=home
-      - TW_USERNAME=sandboxuser
-      - TW_PASSWORD=sandboxpass
-
-
-  http:
-    build: ./  # 以当前的Dockerfile构建
-    restart: always
-    networks:
-      bone:
-    volumes:
-      - dataVol:/var/lib/tiddlywiki
-    environment:
-      - TW_WIKIPATH=http
-      - TW_USERNAME=sandboxuser
-      - TW_PASSWORD=sandboxpass
-
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 
   itt:
     build: ./  # 以当前的Dockerfile构建
@@ -94,7 +71,8 @@ services:
       - TW_WIKIPATH=itt
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
-
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 
   langs:
     build: ./  # 以当前的Dockerfile构建
@@ -107,9 +85,10 @@ services:
       - TW_WIKIPATH=langs
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 
-
-  markup:
+  sandbox:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
@@ -117,10 +96,11 @@ services:
     volumes:
       - dataVol:/var/lib/tiddlywiki
     environment:
-      - TW_WIKIPATH=markup
+      - TW_WIKIPATH=sandbox
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
-
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 
   sw:
     build: ./  # 以当前的Dockerfile构建
@@ -133,5 +113,6 @@ services:
       - TW_WIKIPATH=sw
       - TW_USERNAME=sandboxuser
       - TW_PASSWORD=sandboxpass
-
+      ## double $ to escpae
+      - TW_ROOTTIDDLER=$$:/core/save/lazy-all
 

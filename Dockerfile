@@ -5,12 +5,14 @@ FROM node:7.4.0-slim
 #COPY sources.list /etc/apt/sources.list
 
 
-#RUN apt-get update
+RUN apt-get update &&\
+    apt-get install -y git
 
 ## Install npm
 #RUN apt-get install -y software-properties-common curl
 #RUN curl -sL https://deb.nodesource.com/setup | bash -
 #RUN apt-get install -y nodejs
+
 
 
 # Install tiddlywiki
