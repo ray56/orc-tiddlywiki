@@ -11,6 +11,7 @@ services:
     volumes:
       - ./docker-compose.d/nginx/conf.d:/etc/nginx/conf.d
       - ./docker-compose.d/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker-compose.d/nginx/basic.htpasswd:/etc/nginx/basic.htpasswd
     networks:
       bone:
     ports: ['8088:80']

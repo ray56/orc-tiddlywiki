@@ -7,8 +7,8 @@
       - dataVol:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=cui
-      - TW_USERNAME=sandboxuser
-      - TW_PASSWORD=sandboxpass
+      - TW_USERNAME=
+      - TW_PASSWORD=
       ## double $ to escpae
       - TW_ROOTTIDDLER=$$:/core/save/all
 

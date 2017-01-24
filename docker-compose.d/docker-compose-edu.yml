@@ -1,4 +1,4 @@
-  langs:
+  edu:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
@@ -6,7 +6,7 @@
     volumes:
       - dataVol:/var/lib/tiddlywiki
     environment:
-      - TW_WIKIPATH=langs
+      - TW_WIKIPATH=edu
       - TW_USERNAME=
       - TW_PASSWORD=
       ## double $ to escpae
