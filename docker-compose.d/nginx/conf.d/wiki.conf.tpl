@@ -24,8 +24,9 @@ server {
         proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto $scheme;
 
-        proxy_set_header Authorization $http_authorization;
-        proxy_pass_header  Authorization;
+	# 似乎注释掉也会将这个信息传递给后端??
+        #proxy_set_header Authorization $http_authorization;
+        #proxy_pass_header  Authorization;
 
         proxy_pass http://{{wiki}};
     }
