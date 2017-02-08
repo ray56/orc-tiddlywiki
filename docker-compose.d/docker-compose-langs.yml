@@ -4,7 +4,8 @@
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=langs
       - TW_USERNAME=

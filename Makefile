@@ -11,8 +11,8 @@ clear:
 	rm docker-compose.d/nginx/conf.d/*.conf
 
 docker-compose.yml: clear
-	#for i in ad android apidoc cui datadesign  datadict  design  dev  env  home  http  itt  langs  markup  matlab  note  platform  rlang  sandbox  softdeptdata  sw
-	for i in sw cui env itt langs sandbox edu  #  home  http  itt  langs  markup   sw
+	# 
+	for i in sw langs itt edu note #  
 	do
 		sed "s/{{wiki}}/$${i}/" docker-compose.d/nginx/conf.d/wiki.conf.tpl > docker-compose.d/nginx/conf.d/$${i}.conf
 		sed "s/{{wiki}}/$${i}/" docker-compose.d/docker-compose-partial.tpl > docker-compose.d/docker-compose-$${i}.yml

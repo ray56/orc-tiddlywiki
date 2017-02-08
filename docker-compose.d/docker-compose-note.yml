@@ -1,12 +1,13 @@
-  sandbox:
+  note:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
-      - TW_WIKIPATH=sandbox
+      - TW_WIKIPATH=note
       - TW_USERNAME=
       - TW_PASSWORD=
       ## double $ to escpae

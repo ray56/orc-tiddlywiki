@@ -33,43 +33,16 @@ services:
 #      - TW_PASSWORD=sandboxpass
 
 
-  cui:
-    build: ./  # 以当前的Dockerfile构建
-    restart: always
-    networks:
-      bone:
-    volumes:
-      - dataVol:/var/lib/tiddlywiki
-    environment:
-      - TW_WIKIPATH=cui
-      - TW_USERNAME=
-      - TW_PASSWORD=
-      ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/all
-
   edu:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=edu
-      - TW_USERNAME=
-      - TW_PASSWORD=
-      ## double $ to escpae
-      - TW_ROOTTIDDLER=$$:/core/save/all
-
-  env:
-    build: ./  # 以当前的Dockerfile构建
-    restart: always
-    networks:
-      bone:
-    volumes:
-      - dataVol:/var/lib/tiddlywiki
-    environment:
-      - TW_WIKIPATH=env
       - TW_USERNAME=
       - TW_PASSWORD=
       ## double $ to escpae
@@ -81,7 +54,8 @@ services:
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=itt
       - TW_USERNAME=
@@ -95,7 +69,8 @@ services:
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=langs
       - TW_USERNAME=
@@ -103,15 +78,16 @@ services:
       ## double $ to escpae
       - TW_ROOTTIDDLER=$$:/core/save/all
 
-  sandbox:
+  note:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
-      - TW_WIKIPATH=sandbox
+      - TW_WIKIPATH=note
       - TW_USERNAME=
       - TW_PASSWORD=
       ## double $ to escpae
@@ -123,7 +99,8 @@ services:
     networks:
       bone:
     volumes:
-      - dataVol:/var/lib/tiddlywiki
+      #- dataVol:/var/lib/tiddlywiki
+      - ~/repo/noodle/bd-op/tiddlywikidata:/var/lib/tiddlywiki
     environment:
       - TW_WIKIPATH=sw
       - TW_USERNAME=
