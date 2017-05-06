@@ -12,7 +12,7 @@ clear:
 
 docker-compose.yml: clear
 	# 
-	for i in sw langs itt sandbox #  
+	for i in sw langs itt sandbox note edu include #  
 	do
 		sed "s/{{wiki}}/$${i}/" docker-compose.d/nginx/conf.d/wiki.conf.tpl > docker-compose.d/nginx/conf.d/$${i}.conf
 		sed "s/{{wiki}}/$${i}/" docker-compose.d/docker-compose-partial.tpl > docker-compose.d/docker-compose-$${i}.yml

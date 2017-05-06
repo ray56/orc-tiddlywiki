@@ -1,4 +1,4 @@
-  itt:
+  edu:
     build: ./  # 以当前的Dockerfile构建
     restart: always
     networks:
@@ -9,7 +9,7 @@
       # 打补丁，使得 GET /status 的时候，返回的用户名是basic auth中登录的名字，而不是server命令指定的名字
       - ./docker-compose.d/server.js:/usr/local/lib/node_modules/tiddlywiki/core/modules/commands/server.js
     environment:
-      - TW_WIKIPATH=itt
+      - TW_WIKIPATH=edu
       - TW_USERNAME=anonymous
       - TW_PASSWORD=
       ## double $ to escpae
